@@ -23,5 +23,6 @@
  * ####################################################################################
  */
 module asme.plugins.interfaces {
-
+    exports org.igrok_net.asme.plugins;
+    exports org.igrok_net.asme.plugins.interfaces;
 }
