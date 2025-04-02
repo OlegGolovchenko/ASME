@@ -1,0 +1,19 @@
+# Ignore all 'jar' and 'lib' directories and their contents
+*/jar/*
+*/lib/*
+
+# Ignore jar and lib directories at the root level
+jar/*
+lib/*
+
+# Optionally ignore build directories (e.g., 'bin' and 'doc') at the root and in modules
+*/bin/*
+*/doc/*
+
+# Optionally ignore any IDE or system-specific files
+.idea/
+*.iml
+*.classpath
+*.project
+.DS_Store
+Thumbs.db
