@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="Advanced Stock Management Engine" default="package">
-    <property name="build.dir" value="bin"/>
+<project name="Advanced Stock Management Engine" default="build">
     <property name="jar.dir" value="jar"/>
     <property name="lib.dir" value="lib"/>
     <property name="doc.dir" value="doc"/>
@@ -9,7 +8,6 @@
 
     <target name="clean">
         <echo message="Cleaning build directory..."/>
-        <delete dir="${build.dir}"/>
         <delete dir="${jar.dir}"/>
         <delete dir="${doc.dir}"/>
         <ant dir="${asme.plgn.if.dir}" target="clean"/>
@@ -17,10 +15,14 @@
 
     <target name="compile" depends="clean">
         <echo message="Precompiling..."/>
-        <mkdir dir="${build.dir}"/>
         <mkdir dir="${jar.dir}"/>
         <mkdir dir="${doc.dir}"/>
         <ant dir="${asme.plgn.if.dir}" target="compile"/>
+    </target>
+
+    <target name="doc" depends="compile">
+        <ant dir="${asme.plgn.if.dir}" target="doc"/>
+
     </target>
 
 </project>

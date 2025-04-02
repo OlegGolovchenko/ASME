@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="ASME Plugin Interfaces" default="package">
+<project name="ASME Plugin Interfaces" default="build">
     <property name="build.dir" value="bin"/>
     <property name="jar.dir" value="jar"/>
     <property name="lib.dir" value="lib"/>
@@ -17,5 +17,15 @@
         <mkdir dir="${build.dir}"/>
         <mkdir dir="${jar.dir}"/>
         <mkdir dir="${doc.dir}"/>
+        <javac modulepath="${jar.dir}" srcdir="src" destdir="${build.dir}">
+            <include name="**/*.java"/>
+        </javac>
+    </target>
+
+    <target name="doc" depends="compile">
+        <javadoc classpath="${jar.dir}" destdir="${doc.dir}" sourcepath="src" packagenames="org.igrok_net.asme.plugins.*">
+            <doctitle>IgRok-NET Cryptor Documentation</doctitle>
+        </javadoc>
+        <copy file="favicon.ico" todir="${doc.dir}" />
     </target>
 </project>
